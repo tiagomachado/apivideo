@@ -11,6 +11,7 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+
+$app->group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function ($app) {
+    $app->post('video', 'VideoController@postVideo');
 });
